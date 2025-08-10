@@ -138,8 +138,7 @@ app.kubernetes.io/owner: retail-store-sample
 {{- else }}
 {{- .Values.app.persistence.endpoint -}}
 {{- end -}}
-{{- end -}}
-{{- end -}}
+{{- end }}
 
 {{/*
 Generate MySQL root password
