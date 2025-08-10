@@ -139,3 +139,15 @@ app.kubernetes.io/owner: retail-store-sample
 {{- .Values.app.persistence.endpoint -}}
 {{- end -}}
 {{- end -}}
+{{- end -}}
+
+{{/*
+Generate MySQL root password
+*/}}
+{{- define "catalog.mysql.rootPassword" -}}
+{{- if not (empty .Values.mysql.rootPassword) -}}
+  {{- .Values.mysql.rootPassword | b64enc -}}
+{{- else -}}
+  {{- include "getOrGeneratePass" (dict "Namespace" .Release.Namespace "Kind" "Secret" "Name" .Values.app.persistence.secret.name "Key" "MYSQL_ROOT_PASSWORD") -}}
+{{- end -}}
+{{- end -}}
