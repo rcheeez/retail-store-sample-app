@@ -5,7 +5,7 @@
 variable "aws_region" {
   description = "AWS region where resources will be created"
   type        = string
-  default     = "us-west-2"
+  default     = "ap-south-1"
 }
 
 variable "cluster_name" {
@@ -29,7 +29,7 @@ variable "kubernetes_version" {
 variable "vpc_cidr" {
   description = "CIDR block for VPC"
   type        = string
-  default     = "10.0.0.0/16"
+  default     = "10.0.1.0/16"
 }
 
 variable "argocd_namespace" {
@@ -53,5 +53,5 @@ variable "enable_single_nat_gateway" {
 variable "enable_monitoring" {
   description = "Enable monitoring stack (Prometheus, Grafana)"
   type        = bool
-  default     = false
+  default     = true
 }
