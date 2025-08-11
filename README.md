@@ -4,7 +4,7 @@
  
 <div align="center">
   <strong>
-  <h2>AWS Containers Retail Sample by Archies Gurav</h2>
+  <h2>AWS Containers Retail Sample</h2>
   </strong>
 </div>
 
