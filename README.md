@@ -4,11 +4,17 @@
  
 <div align="center">
   <strong>
-  <h2>AWS Containers Retail Sample</h2>
+  <h2>AWS Containers Retail Sample by Archies Gurav</h2>
   </strong>
 </div>
 
-This is a sample application designed to illustrate various concepts related to containers on AWS. It presents a sample retail store application including a product catalog, shopping cart and checkout, deployed using modern DevOps practices including GitOps and Infrastructure as Code.
+This is a comprehensive sample application designed to demonstrate enterprise-grade containerized microservices on AWS. It showcases a complete retail store application with product catalog, shopping cart, and checkout functionality, deployed using modern DevOps practices including GitOps, Infrastructure as Code, and comprehensive monitoring with Grafana dashboards.
+
+**🚀 Enhanced with:**
+- **Complete Observability Stack**: Custom Grafana dashboards for Kubernetes monitoring
+- **Production-Ready GitOps**: Automated CI/CD with GitHub Actions and ArgoCD
+- **EKS Auto Mode**: Leveraging AWS's latest serverless Kubernetes experience
+- **Multi-Environment Support**: Dual-branch strategy for development and production workflows
 
 ## Table of Contents
 
@@ -23,7 +29,7 @@ This is a sample application designed to illustrate various concepts related to 
 - [Infrastructure Components](#infrastructure-components)
 - [CI/CD Pipeline](#cicd-pipeline)
 - [Monitoring and Observability](#monitoring-and-observability)
-- [Cleanup](https://github.com/rcheeez/retail-store-sample-app/blob/main/README.md#step-12-cleanup)
+- [Cleanup](https://github.com/rcheeez/retail-store-sample-app/blob/main/README.md#step-13-cleanup)
 - [Troubleshooting](#troubleshooting)
 
 ## Overview
@@ -73,7 +79,7 @@ The Infrastructure Architecture follows cloud-native best practices:
 
 1. **Install Prerequisites**: AWS CLI, Terraform, kubectl, Docker, Helm
 2. **Configure AWS**: `aws configure` with appropriate credentials
-3. **Clone Repository**: `git clone https://github.com/LondheShubham153/retail-store-sample-app.git`
+3. **Clone Repository**: `git clone https://github.com/rcheeez/retail-store-sample-app.git`
 4. **Deploy Infrastructure**: Run Terraform in two phases (see [Getting Started](#getting-started))
 5. **Access Application**: Get load balancer URL and browse the retail store
 
@@ -105,7 +111,7 @@ This repository uses a **dual-branch approach** for different deployment scenari
 
 1. **Install Prerequisites**: AWS CLI, Terraform, kubectl, Docker, Helm
 2. **Configure AWS**: `aws configure` with appropriate credentials
-3. **Clone Repository**: `git clone https://github.com/LondheShubham153/retail-store-sample-app.git`
+3. **Clone Repository**: `git clone https://github.com/rcheeez/retail-store-sample-app.git`
 4. **Deploy Infrastructure**: Run Terraform in two phases (see [Getting Started](#getting-started))
 5. **Access Application**: Get load balancer URL and browse the retail store
 
@@ -338,14 +344,36 @@ The ArgoCD UI provides:
 - **Sync Operations**: Manual sync and rollback capabilities
 - **Health Monitoring**: Application and resource health status
 
-### Step 11: Monitor Application Deployment
+### Step 11: Monitoring with Grafana Dashboard
+
+This implementation includes a comprehensive Grafana dashboard for Kubernetes cluster monitoring, providing real-time insights into your EKS infrastructure and application performance.
+
+![Grafana Kubernetes Dashboard](./docs/images/grafana-k8s-dashboard.png)
+
+**Dashboard Features:**
+- **Cluster Overview**: Real-time cluster health and resource utilization
+- **Node Metrics**: CPU, memory, disk, and network usage across all nodes
+- **Pod Monitoring**: Individual pod performance and resource consumption
+- **Namespace Analytics**: Resource usage breakdown by namespace
+- **Application Performance**: Service-level metrics and response times
+
+**Key Metrics Monitored:**
+- **Resource Utilization**: CPU and memory usage patterns
+- **Network Traffic**: Ingress/egress data flow and bandwidth utilization
+- **Storage Metrics**: Persistent volume usage and I/O performance
+- **Application Health**: Service availability and error rates
+- **Auto-scaling Events**: HPA and VPA scaling activities
+
+This observability stack enables proactive monitoring and troubleshooting, ensuring optimal performance of your retail store application in production environments.
+
+### Step 12: Monitor Application Deployment
 
 ```bash
 kubectl get pods -n retail-store
 kubectl get ingress -n retail-store
 ```
 
-### Step 12: Cleanup
+### Step 13: Cleanup
 
 To delete all resources created by Terraform:
 
@@ -402,8 +430,8 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](./LICE
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/LondheShubham153/retail-store-sample-app/issues)
-- **Discord**: [TrainWithShubhamCommunity](https://discord.gg/kGEr9mR5gT)
+- **Issues**: [GitHub Issues](https://github.com/rcheeez/retail-store-sample-app/issues)
+- **LinkedIn**: [Archies Gurav](https://www.linkedin.com/in/archies-gurav-253865213/)
 
 ---
 
